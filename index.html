@@ -12,10 +12,10 @@
         body    {
             width: 70%;
             margin: 0 auto;
-            padding-top: 40px;
+            padding-top: 25px;
         }
         #inputs{
-            width: 450px;
+            width: 50%;
             margin-bottom: 5px;
         }
         #buttons{
@@ -30,7 +30,7 @@
             border: 1px solid #ced4da;
             border-radius: .25rem;
             padding: 10px;
-            margin-top: 16px;
+            margin: 10px 0 10px 0;
         }
     </style>
 </head>
@@ -38,7 +38,7 @@
     <div id="container">
         <h2 class="text-center">Generator stopki Wszystko Do Kawy</h2>
         <div id="inputs">
-            <form>
+            <form id="form">
                 <div class="form-group">
                     <label for="name">Imię i naziwsko:</label>
                     <input type="text" class="form-control" id="name" placeholder="Imię i naziwsko">
@@ -52,35 +52,35 @@
                     <input type="text" class="form-control" id="phonenumber" placeholder="Numer telefonu">
                 </div>
                 <div class="form-group">
-                    <label for="email">Adres e-mail:</label>
+                    <label for="email">Adres email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Adres @">
                 </div>
                 <div id="buttons">
                 <button type="button" class="btn btn-primary" onclick="generate()">Generuj</button>
-                <button type="button" class="btn btn-secondary" onclick="clear()">Wyczyść</button>
+                <button type="button" class="btn btn-secondary" onclick="clearForm()">Wyczyść</button>
                 <div id="output"></div>
                 </div>
             </form>
         </div>
-        <h4>Stopka do skopiowania:</h4>
+        <h6>Stopka do skopiowania:</h6>
         <div id="footer" class="bg-white text-dark">
             <table cellspacing="0" width="400px" height="110px" cellpadding="0" border="0">
                 <tr>
                     <td style="padding: 0px 5px 0 0;vertical-align: top;" valign="top" width="100">
-                        <img alt="Wszystko do kawy" src="img/logo_WszystkoDoKawy_100.png" />
+                        <img alt="Wszystko do kawy" src="https://sqzzkr.github.io/stopki/img/logo_WszystkoDoKawy_100.png" />
                     </td>
                     <td style="padding: 0 5px 0 0; vertical-align: top;border-right: 3px solid #710002;" valign="top">
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                                <td style="font-family: Arial;padding: 5px 5px 7px 3px;"><a href="https://www.facebook.com/wszystkodokawyPL/" target="_blank"><img alt="https://www.facebook.com/wszystkodokawyPL/"style="width:25px;" width="25" src="./img/facebook-square-brands.png"></a>
+                                <td style="font-family: Arial;padding: 5px 5px 7px 3px;"><a href="https://www.facebook.com/wszystkodokawyPL/" target="_blank"><img alt="https://www.facebook.com/wszystkodokawyPL/"style="width:25px;" width="25" src="https://sqzzkr.github.io/stopki/img/facebook-square-brands.png"></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-family: Arial;padding: 0 5px 7px 3px;"><a href="https://www.instagram.com/wszystkodokawypl/" target="_blank"><img alt="https://www.instagram.com/wszystkodokawypl/" style="width:25px;" width="25" src="./img/instagram-brands.png"></a>
+                                <td style="font-family: Arial;padding: 0 5px 7px 3px;"><a href="https://www.instagram.com/wszystkodokawypl/" target="_blank"><img alt="https://www.instagram.com/wszystkodokawypl/" style="width:25px;" width="25" src="https://sqzzkr.github.io/stopki/img/instagram-brands.png"></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-family: Arial;padding: 0 5px 0 3px"><a href="https://www.youtube.com/c/WszystkodokawysklepPllodz" target="_blank"><img alt="https://www.youtube.com/c/WszystkodokawysklepPllodz" style="width:25px;" width="25" src="./img/youtube-square-brands.png"></a>
+                                <td style="font-family: Arial;padding: 0 5px 0 3px"><a href="https://www.youtube.com/c/WszystkodokawysklepPllodz" target="_blank"><img alt="https://www.youtube.com/c/WszystkodokawysklepPllodz" style="width:25px;" width="25" src="https://sqzzkr.github.io/stopki/img/youtube-square-brands.png"></a>
                                 </td>
                             </tr>
                         </table>
@@ -89,12 +89,12 @@
                 <table cellspacing="0" cellpadding="0" border="0" style="line-height: 1.4;font-family:Verdana, Geneva, sans-serif;font-size:90%;color: #000001;">
                     <tr>
                         <td style="padding: 5px 0 0 0;">
-                        <span style="font: 600 1.1em Verdana, Geneva, sans-serif;color:#710002;" id="footer_name"><b>Jan Kowalski</b></span>
+                        <span style="font: 600 1.1em Verdana, Geneva, sans-serif;color:#710002;" id="footer_name">Jan Kowalski</span>
                         </td>
                     </tr>
                     <tr>
                         <td style="color:#000001;padding-bottom: 10px;">
-                            <div style="font: 0.75em Verdana, Geneva, sans-serif;" id="footer_jobtitle"><b>Pracownik</b></div>
+                            <div style="font: 0.75em Verdana, Geneva, sans-serif;font-weight: 600" id="footer_jobtitle">Pracownik</div>
                         </td>
                     </tr>
                     <tr>
@@ -107,7 +107,7 @@
                     <tr>
                         <td>
                             <div style="font: 0.8em Verdana, Geneva, sans-serif;">
-                                <a href="mailto:example@example.com" style="text-decoration: none;color: #000001;font-weight: 600" target="_blank" id="footer_email">info@wszystkodokawy.pl</a>
+                                <a href="mailto:example@example.com" style="text-decoration: none;color: #000001;font-weight: 600" target="_blank" id="footer_email">email@wszystkodokawy.pl</a>
                             </div>
                         </td>
                     </tr>
@@ -128,6 +128,8 @@
     </td>
     </table>
         </div>
+		<button type="button" class="btn btn-info" onclick="copyInnerHTMLToClipboard('footer')">Skopiuj HTML</button>
+		<button type="button" class="btn btn btn-light" onclick="copyToClipboard()">Skopiuj Stopkę</button>
     </div>
     <!-- Optional JavaScript -->
     <script src="./script.js"></script>
