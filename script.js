@@ -13,6 +13,7 @@ function generate() {
     document.getElementById("footer_jobtitle").innerHTML = jobtitle;
     document.getElementById("footer_phonenumber").innerHTML = phonenumber;
     document.getElementById("footer_email").innerHTML = email;
+    document.getElementById("footer_email").href = 'mailto:'+email;
 
         output.style.color = "green";
         output.innerHTML = "<h6>Gotowe!</h6>";
